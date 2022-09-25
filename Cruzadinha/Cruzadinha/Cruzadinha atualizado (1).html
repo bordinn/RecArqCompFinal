@@ -149,14 +149,12 @@
             background-color: white;
             color: #196F3D;
             border: 1px #196F3D solid;
-            background-image: url(https://i.pinimg.com/originals/56/af/b6/56afb639bf2d5a05c2cdddc249138029.jpg);
             background-repeat: no-repeat;
             background-size: 112px;
             border-radius: 16px;
         }
 
         .wrongAnswer {
-            background-image: url(https://uploads.spiritfanfiction.com/fanfics/historias/201910/zoio-e-seu-verdadeiro-amor-17610141-041020192127.jpg);
             color: #e71906;
             border: 1px #e71906 solid;
             background-repeat: no-repeat;
@@ -208,6 +206,8 @@
                 <div style="display: none" id="div_questions">
                     <center class="center">
                         <br>
+                        <span id="span_questionText">Vamos encontrar as esferas do dragao</span>
+                        <input type="text" id="input_answer" placeholder="Sua Reposta"><br>
                         <button id="button_verify" onclick="verify()" class="button">Verificar</button>
                         <br>
                         <button class="button" style="display: none" id="bt_destroyGame"
