@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,63 +15,36 @@
 </body>
 </html>
 <script>
-  var dados = {
-            labels: [],
-            datasets: [
-                {
-                    yAxisID: 'y-temperatura',
-                    label: 'acertos',
-                    borderColor: 'white',
-                    backgroundColor: '#ECC03D',
-                    fill: true,
-                    data: [10]
-                }
-            ]
-
-        };
-        var ctx = myChart.getContext('2d');
-        window.myChart = Chart.Bar(ctx, {
-            data: dados,
-            options: {
-                responsive: true,
-                animation: { duration: 1000 },
-                hoverMode: 'index',
-                stacked: false,
-                title: {
-                    display: false,
-                    text: 'Dados capturados'
-                },
-                legend: {
-                    display: false
-                },
-
-                tooltips: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.703)',
-                },
-                scales: {
-                    yAxes: [{
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        id: 'y-temperatura',
-                        ticks: {
-                            fontColor: 'white',
-                            beginAtZero: true,
-                            max: 10,
-                            min: 0
-                        },
-
-
-                    }],
-                    xAxes: [{
-                        ticks: {
-                            fontColor: 'white'
-                        }
-                    }]
-                }
-            }
-        });
-
+    const labels = [
+      'Pontuação1',
+      'Pontuação2'
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Pontos',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 5, 10, 11],
+      }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        scales: {
+    yAxes: [{
+        ticks: {
+            max: 5,
+            min: 0,
+            stepSize: 1
+        }
+    }]
+}
+      }
+    };
   </script>
   <script>
     const myChart = new Chart(
