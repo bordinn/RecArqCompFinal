@@ -16,79 +16,79 @@ var questions = [
     {
         question: "Por que abrir o Git Bash no local da API?",
         choices: {
-            a: "1975",
-            b: "1972",
-            c: "1969"
+            a: "Para conectar no banco",
+            b: "Para poder rodar a api",
+            c: "Para poder dar npm install"
         },
         answer: "c"
     },
     {
         question: "Onde está a API na sua máquina e por quê?",
         choices: {
-            a: "6",
-            b: "7",
-            c: "8"
+            a: "Localizada no system32",
+            b: "Está localizada no diretório Documents",
+            c: "Localizada em Objetos 3D"
         },
         answer: "b"
     },
     {
         question: "Qual a porta, é utilizada pelo index.html?",
         choices: {
-            a: "Pronghorn",
-            b: "Cheeta",
-            c: "Springbokgit"
+            a: "3333",
+            b: "3306",
+            c: "3000"
         },
-        answer: "b"
+        answer: "a"
     },
     {
         question: "Onde no código o gráfico é gerado?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "Na função Plotar gráfico",
+            b: "No diretório models",
+            c: "Na função obter dados gráficos"
         },
         answer: "a"
     },
     {
         question: "Onde no código é feita a média das leituras de temp?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "",
+            b: "",
+            c: ""
         },
-        answer: "a"
+        answer: "c"
     },
     {
         question: "Onde no código é feita a alteração de tamanho, tipo e cor do gráfico?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "",
+            b: "Dentro da function plotarGráfico",
+            c: ""
         },
-        answer: "a"
+        answer: "b"
     },
     {
         question: "O que causa erro de inicialização da API?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "",
+            b: "",
+            c: "Não baixar os modulos node"
         },
-        answer: "a"
+        answer: "c"
     },
     {
         question: "Qual PID está associado a porta tomada pelo index.html?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "7652",
+            b: "0000",
+            c: "3060"
         },
         answer: "a"
     },
     {
         question: "Quais os passos para configurar variável de ambiente do Windows para que você acesse o mysql no terminal direto em qualquer local?",
         choices: {
-            a: "California",
+            a: "",
             b: "New York",
             c: "Texas"
         },
