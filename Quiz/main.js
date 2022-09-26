@@ -1,8 +1,5 @@
 
 
-
-
-
 var questions = [
     {
         question: "O que é o npm start?",
@@ -16,79 +13,79 @@ var questions = [
     {
         question: "Por que abrir o Git Bash no local da API?",
         choices: {
-            a: "Para conectar no banco",
-            b: "Para poder rodar a api",
-            c: "Para poder dar npm install"
+            a: "1975",
+            b: "1972",
+            c: "1969"
         },
         answer: "c"
     },
     {
         question: "Onde está a API na sua máquina e por quê?",
         choices: {
-            a: "Localizada no system32",
-            b: "Está localizada no diretório Documents",
-            c: "Localizada em Objetos 3D"
+            a: "6",
+            b: "7",
+            c: "8"
         },
         answer: "b"
     },
     {
         question: "Qual a porta, é utilizada pelo index.html?",
         choices: {
-            a: "3333",
-            b: "3306",
-            c: "3000"
+            a: "Pronghorn",
+            b: "Cheeta",
+            c: "Springbokgit"
         },
-        answer: "a"
+        answer: "b"
     },
     {
         question: "Onde no código o gráfico é gerado?",
         choices: {
-            a: "Na função Plotar gráfico",
-            b: "No diretório models",
-            c: "Na função obter dados gráficos"
+            a: "California",
+            b: "New York",
+            c: "Texas"
         },
         answer: "a"
     },
     {
         question: "Onde no código é feita a média das leituras de temp?",
         choices: {
-            a: "",
-            b: "",
-            c: ""
+            a: "California",
+            b: "New York",
+            c: "Texas"
         },
-        answer: "c"
+        answer: "a"
     },
     {
         question: "Onde no código é feita a alteração de tamanho, tipo e cor do gráfico?",
         choices: {
-            a: "",
-            b: "Dentro da function plotarGráfico",
-            c: ""
+            a: "California",
+            b: "New York",
+            c: "Texas"
         },
-        answer: "b"
+        answer: "a"
     },
     {
         question: "O que causa erro de inicialização da API?",
         choices: {
-            a: "",
-            b: "",
-            c: "Não baixar os modulos node"
+            a: "California",
+            b: "New York",
+            c: "Texas"
         },
-        answer: "c"
+        answer: "a"
     },
     {
         question: "Qual PID está associado a porta tomada pelo index.html?",
         choices: {
-            a: "7652",
-            b: "0000",
-            c: "3060"
+            a: "California",
+            b: "New York",
+            c: "Texas"
         },
         answer: "a"
     },
     {
         question: "Quais os passos para configurar variável de ambiente do Windows para que você acesse o mysql no terminal direto em qualquer local?",
         choices: {
-            a: "",
+            a: "California",
             b: "New York",
             c: "Texas"
         },
@@ -240,4 +237,3 @@ submitButton.addEventListener("click", results);
 // Click para mostrar a próxima pergunta ou a anterior
 previousButton.addEventListener("click", previousSlide);
 nextButton.addEventListener("click", nextSlide);
-

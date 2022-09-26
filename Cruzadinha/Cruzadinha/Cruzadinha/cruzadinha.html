@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação arq comp</title>
+    <link rel="stylesheet" href="./cruzadinha.CSS">
+</head>
+
+<body class="corpo">
+
+    <div class="header">
+        <h1>Cruzadinha</h1>
+        <button onclick="instrucoes()">Instruções</button>
+    </div>
+    <div class="banner">
+        <div id="card1" style="display: none;" class="card1">
+            <div class="numeros">
+                <div class="nmr1">1</div>
+                <div class="nmr2">2</div>
+                <div class="nmr3">3</div>
+                <div class="nmr4">4</div>
+                <div class="nmr5">5</div>
+                <div class="nmr6">6</div>
+                <div class="nmr7">7</div>
+                <div class="nmr8">8</div>
+                <div class="nmr9">9</div>
+                <div class="nmr10">10</div>
+                <div class="nmr11">11</div>
+                <div class="nmr12">12</div>
+                <div class="nmr13">13</div>
+                <div class="nmr14">14</div>
+                <div class="nmr15">15</div>
+                <div class="nmr16">16</div>
+            </div>
+            <table id="mesa" class="mesa">
+                <tbody>
+                    <tr id="linha1" class="linha">
+                        <td class="morta" id="cell0">&nbsp;</td>
+                        <td class="morta" id="cell1">&nbsp;</td>
+                        <td class="morta" id="cell2">&nbsp;</td>
+                        <td class="viva" id="cell3"></td>
+                        <td class="viva" id="cell4">&nbsp;</td>
+                        <td class="morta" id="cell5">&nbsp;</td>
+                        <td class="morta" id="cell6">&nbsp;</td>
+                        <td class="morta" id="cell7">&nbsp;</td>
+                        <td class="morta" id="cell8">&nbsp;</td>
+                        <td class="morta" id="cell9">&nbsp;</td>
+                        <td class="morta" id="cell10">&nbsp;</td>
+                        <td class="morta" id="cell11">&nbsp;</td>
+                        <td class="morta" id="cell12">&nbsp;</td>
+                    </tr>
+                    <tr id="linha2" class="linha">
+                        <td class="morta" id="cell13">&nbsp;</td>
+                        <td class="morta" id="cell14">&nbsp;</td>
+                        <td class="morta" id="cell15">&nbsp;</td>
+                        <td class="viva" id="cell16">&nbsp;</td>
+                        <td class="viva" id="cell17">&nbsp;</td>
+                        <td class="morta" id="cell18">&nbsp;</td>
+                        <td class="morta" id="cell19">&nbsp;</td>
+                        <td class="morta" id="cell20">&nbsp;</td>
+                        <td class="morta" id="cell21">&nbsp;</td>
+                        <td class="morta" id="cell22">&nbsp;</td>
+                        <td class="viva" id="cell23">&nbsp;</td>
+                        <td class="morta" id="cell24">&nbsp;</td>
+                        <td class="morta" id="cell25">&nbsp;</td>
+                    </tr>
+                    <tr id="linha3" class="linha">
+                        <td class="morta" id="cell26">&nbsp;</td>
+                        <td class="morta" id="cell27">&nbsp;</td>
+                        <td class="viva" id="cell28">&nbsp;</td>
+                        <td class="viva" id="cell29">&nbsp;</td>
+                        <td class="viva" id="cell30">&nbsp;</td>
+                        <td class="viva" id="cell31">&nbsp;</td>
+                        <td class="viva" id="cell32">&nbsp;</td>
+                        <td class="viva" id="cell33">&nbsp;</td>
+                        <td class="viva" id="cell34">&nbsp;</td>
+                        <td class="viva" id="cell35">&nbsp;</td>
+                        <td class="viva" id="cell36">&nbsp;</td>
+                        <td class="morta" id="cell37">&nbsp;</td>
+                        <td class="morta" id="cell38">&nbsp;</td>
+                    </tr>
+                    <tr id="linha4" class="linha">
+                        <td class="morta" id="cell39">&nbsp;</td>
+                        <td class="morta" id="cell40">&nbsp;</td>
+                        <td class="morta" id="cell41">&nbsp;</td>
+                        <td class="morta" id="cell42">&nbsp;</td>
+                        <td class="viva" id="cell43">&nbsp;</td>
+                        <td class="morta" id="cell44">&nbsp;</td>
+                        <td class="viva" id="cell45">&nbsp;</td>
+                        <td class="viva" id="cell46">&nbsp;</td>
+                        <td class="viva" id="cell47">&nbsp;</td>
+                        <td class="morta" id="cell48">&nbsp;</td>
+                        <td class="viva" id="cell49">&nbsp;</td>
+                        <td class="morta" id="cell50">&nbsp;</td>
+                        <td class="morta" id="cell51">&nbsp;</td>
+                    </tr>
+                    <tr id="linha5" class="linha">
+                        <td class="morta" id="cell52">&nbsp;</td>
+                        <td class="morta" id="cell53">&nbsp;</td>
+                        <td class="morta" id="cell54">&nbsp;</td>
+                        <td class="morta" id="cell55">&nbsp;</td>
+                        <td class="viva" id="cell56">&nbsp;</td>
+                        <td class="morta" id="cell57">&nbsp;</td>
+                        <td class="viva" id="cell58">&nbsp;</td>
+                        <td class="morta" id="cell59">&nbsp;</td>
+                        <td class="morta" id="cell60">&nbsp;</td>
+                        <td class="morta" id="cell61">&nbsp;</td>
+                        <td class="viva" id="cell62">&nbsp;</td>
+                        <td class="morta" id="cell63">&nbsp;</td>
+                        <td class="morta" id="cell64">&nbsp;</td>
+                    </tr>
+                    <tr id="linha6" class="linha">
+                        <td class="morta" id="cell65">&nbsp;</td>
+                        <td class="morta" id="cell66">&nbsp;</td>
+                        <td class="morta" id="cell67">&nbsp;</td>
+                        <td class="morta" id="cell68">&nbsp;</td>
+                        <td class="viva" id="cell69">&nbsp;</td>
+                        <td class="morta" id="cell70">&nbsp;</td>
+                        <td class="viva" id="cell71">&nbsp;</td>
+                        <td class="morta" id="cell72">&nbsp;</td>
+                        <td class="morta" id="cell73">&nbsp;</td>
+                        <td class="morta" id="cell74">&nbsp;</td>
+                        <td class="viva" id="cell75">&nbsp;</td>
+                        <td class="morta" id="cell76">&nbsp;</td>
+                        <td class="morta" id="cell77">&nbsp;</td>
+                    </tr>
+                    <tr id="linha7" class="linha">
+                        <td class="morta" id="cell78">&nbsp;</td>
+                        <td class="morta" id="cell79">&nbsp;</td>
+                        <td class="morta" id="cell80">&nbsp;</td>
+                        <td class="morta" id="cell81">&nbsp;</td>
+                        <td class="viva" id="cell82">&nbsp;</td>
+                        <td class="morta" id="cell83">&nbsp;</td>
+                        <td class="viva" id="cell84">&nbsp;</td>
+                        <td class="viva" id="cell85">&nbsp;</td>
+                        <td class="morta" id="cell86">&nbsp;</td>
+                        <td class="viva" id="cell87">&nbsp;</td>
+                        <td class="viva" id="cell88">&nbsp;</td>
+                        <td class="viva" id="cell89">&nbsp;</td>
+                        <td class="morta" id="cell90">&nbsp;</td>
+                    </tr>
+                    <tr id="linha8" class="linha">
+                        <td class="morta" id="cell91">&nbsp;</td>
+                        <td class="morta" id="cell92">&nbsp;</td>
+                        <td class="morta" id="cell93">&nbsp;</td>
+                        <td class="morta" id="cell94">&nbsp;</td>
+                        <td class="viva" id="cell95">&nbsp;</td>
+                        <td class="morta" id="cell96">&nbsp;</td>
+                        <td class="viva" id="cell97">&nbsp;</td>
+                        <td class="morta" id="cell98">&nbsp;</td>
+                        <td class="viva" id="cell99">&nbsp;</td>
+                        <td class="viva" id="cell100">&nbsp;</td>
+                        <td class="viva" id="cell101">&nbsp;</td>
+                        <td class="morta" id="cell102">&nbsp;</td>
+                        <td class="morta" id="cell103">&nbsp;</td>
+                    </tr>
+                    <tr id="linha9" class="linha">
+                        <td class="morta" id="cell104">&nbsp;</td>
+                        <td class="morta" id="cell105">&nbsp;</td>
+                        <td class="morta" id="cell106">&nbsp;</td>
+                        <td class="morta" id="cell107">&nbsp;</td>
+                        <td class="viva" id="cell108">&nbsp;</td>
+                        <td class="morta" id="cell109">&nbsp;</td>
+                        <td class="viva" id="cell110">&nbsp;</td>
+                        <td class="morta" id="cell111">&nbsp;</td>
+                        <td class="morta" id="cell112">&nbsp;</td>
+                        <td class="viva" id="cell113">&nbsp;</td>
+                        <td class="viva" id="cell114">&nbsp;</td>
+                        <td class="morta" id="cell115">&nbsp;</td>
+                        <td class="morta" id="cell116">&nbsp;</td>
+                    </tr>
+                    <tr id="linha10" class="linha">
+                        <td class="morta" id="cell117">&nbsp;</td>
+                        <td class="morta" id="cell118">&nbsp;</td>
+                        <td class="morta" id="cell119">&nbsp;</td>
+                        <td class="morta" id="cell120">&nbsp;</td>
+                        <td class="morta" id="cell121">&nbsp;</td>
+                        <td class="morta" id="cell122">&nbsp;</td>
+                        <td class="viva" id="cell123">&nbsp;</td>
+                        <td class="morta" id="cell124">&nbsp;</td>
+                        <td class="morta" id="cell125">&nbsp;</td>
+                        <td class="viva" id="cell126">&nbsp;</td>
+                        <td class="viva" id="cell127">&nbsp;</td>
+                        <td class="morta" id="cell128">&nbsp;</td>
+                        <td class="morta" id="cell129">&nbsp;</td>
+                    </tr>
+                    <tr id="linha11" class="linha">
+                        <td class="morta" id="cell130">&nbsp;</td>
+                        <td class="morta" id="cell131">&nbsp;</td>
+                        <td class="morta" id="cell132">&nbsp;</td>
+                        <td class="morta" id="cell133">&nbsp;</td>
+                        <td class="morta" id="cell134">&nbsp;</td>
+                        <td class="morta" id="cell135">&nbsp;</td>
+                        <td class="viva" id="cell136">&nbsp;</td>
+                        <td class="morta" id="cell137">&nbsp;</td>
+                        <td class="viva" id="cell138">&nbsp;</td>
+                        <td class="viva" id="cell139">&nbsp;</td>
+                        <td class="viva" id="cell140">&nbsp;</td>
+                        <td class="morta" id="cell141">&nbsp;</td>
+                        <td class="morta" id="cell142">&nbsp;</td>
+                    </tr>
+                    <tr id="linha12" class="linha">
+                        <td class="morta" id="cell143">&nbsp;</td>
+                        <td class="morta" id="cell144">&nbsp;</td>
+                        <td class="morta" id="cell145">&nbsp;</td>
+                        <td class="morta" id="cell146">&nbsp;</td>
+                        <td class="morta" id="cell147">&nbsp;</td>
+                        <td class="morta" id="cell148">&nbsp;</td>
+                        <td class="viva" id="cell149">&nbsp;</td>
+                        <td class="viva" id="cell150">&nbsp;</td>
+                        <td class="viva" id="cell151">&nbsp;</td>
+                        <td class="morta" id="cell152">&nbsp;</td>
+                        <td class="viva" id="cell153">&nbsp;</td>
+                        <td class="morta" id="cell154">&nbsp;</td>
+                        <td class="morta" id="cell155">&nbsp;</td>
+                    </tr>
+                    <tr id="linha13" class="linha">
+                        <td class="morta" id="cell156">&nbsp;</td>
+                        <td class="morta" id="cell157">&nbsp;</td>
+                        <td class="morta" id="cell158">&nbsp;</td>
+                        <td class="morta" id="cell159">&nbsp;</td>
+                        <td class="morta" id="cell160">&nbsp;</td>
+                        <td class="morta" id="cell161">&nbsp;</td>
+                        <td class="viva" id="cell162">&nbsp;</td>
+                        <td class="morta" id="cell163">&nbsp;</td>
+                        <td class="viva" id="cell164">&nbsp;</td>
+                        <td class="morta" id="cell165">&nbsp;</td>
+                        <td class="viva" id="cell166">&nbsp;</td>
+                        <td class="morta" id="cell167">&nbsp;</td>
+                        <td class="morta" id="cell168">&nbsp;</td>
+                    </tr>
+                    <tr id="linha14" class="linha">
+                        <td class="morta" id="cell169">&nbsp;</td>
+                        <td class="morta" id="cell170">&nbsp;</td>
+                        <td class="morta" id="cell171">&nbsp;</td>
+                        <td class="viva" id="cell172">&nbsp;</td>
+                        <td class="morta" id="cell173">&nbsp;</td>
+                        <td class="morta" id="cell174">&nbsp;</td>
+                        <td class="viva" id="cell175">&nbsp;</td>
+                        <td class="morta" id="cell176">&nbsp;</td>
+                        <td class="viva" id="cell177">&nbsp;</td>
+                        <td class="morta" id="cell178">&nbsp;</td>
+                        <td class="viva" id="cell179">&nbsp;</td>
+                        <td class="morta" id="cell180">&nbsp;</td>
+                        <td class="morta" id="cell181">&nbsp;</td>
+                    </tr>
+                    <tr id="linha15" class="linha">
+                        <td class="morta" id="cell182">&nbsp;</td>
+                        <td class="morta" id="cell183">&nbsp;</td>
+                        <td class="morta" id="cell184">&nbsp;</td>
+                        <td class="viva" id="cell185">&nbsp;</td>
+                        <td class="morta" id="cell187">&nbsp;</td>
+                        <td class="morta" id="cell188">&nbsp;</td>
+                        <td class="viva" id="cell189">&nbsp;</td>
+                        <td class="morta" id="cell190">&nbsp;</td>
+                        <td class="viva" id="cell191">&nbsp;</td>
+                        <td class="morta" id="cell192">&nbsp;</td>
+                        <td class="viva" id="cell193">&nbsp;</td>
+                        <td class="morta" id="cell194">&nbsp;</td>
+                        <td class="morta" id="cell195">&nbsp;</td>
+                    </tr>
+                    <tr id="linha16" class="linha">
+                        <td class="morta" id="cell196">&nbsp;</td>
+                        <td class="viva" id="cell197">&nbsp;</td>
+                        <td class="viva" id="cell198">&nbsp;</td>
+                        <td class="viva" id="cell199">&nbsp;</td>
+                        <td class="viva" id="cell200">&nbsp;</td>
+                        <td class="viva" id="cell201">&nbsp;</td>
+                        <td class="viva" id="cell202">&nbsp;</td>
+                        <td class="viva" id="cell203">&nbsp;</td>
+                        <td class="viva" id="cell204">&nbsp;</td>
+                        <td class="viva" id="cell205">&nbsp;</td>
+                        <td class="viva" id="cell206">&nbsp;</td>
+                        <td class="morta" id="cell207">&nbsp;</td>
+                        <td class="morta" id="cell208">&nbsp;</td>
+                    </tr>
+                    <tr id="linha17" class="linha">
+                        <td class="morta" id="cell209">&nbsp;</td>
+                        <td class="morta" id="cell210">&nbsp;</td>
+                        <td class="morta" id="cell211">&nbsp;</td>
+                        <td class="viva" id="cell212">&nbsp;</td>
+                        <td class="morta" id="cell213">&nbsp;</td>
+                        <td class="morta" id="cell214">&nbsp;</td>
+                        <td class="morta" id="cell215">&nbsp;</td>
+                        <td class="morta" id="cell216">&nbsp;</td>
+                        <td class="viva" id="cell217">&nbsp;</td>
+                        <td class="morta" id="cell218">&nbsp;</td>
+                        <td class="viva" id="cell219">&nbsp;</td>
+                        <td class="morta" id="cell220">&nbsp;</td>
+                        <td class="morta" id="cell221">&nbsp;</td>
+                    </tr>
+                    <tr id="linha18" class="linha">
+                        <td class="morta" id="cell222">&nbsp;</td>
+                        <td class="morta" id="cell223">&nbsp;</td>
+                        <td class="morta" id="cell224">&nbsp;</td>
+                        <td class="viva" id="cell225">&nbsp;</td>
+                        <td class="morta" id="cell226">&nbsp;</td>
+                        <td class="morta" id="cell227">&nbsp;</td>
+                        <td class="morta" id="cell228">&nbsp;</td>
+                        <td class="viva" id="cell229">&nbsp;</td>
+                        <td class="viva" id="cell230">&nbsp;</td>
+                        <td class="morta" id="cell231">&nbsp;</td>
+                        <td class="morta" id="cell232">&nbsp;</td>
+                        <td class="morta" id="cell233">&nbsp;</td>
+                        <td class="morta" id="cell234">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="card2" style="display: none;" class="card2">
+            <div style="display: block;" id="div_pergunta1" class="div_pergunta">
+                <span id="pergunta1" class="pergunta">1- Qual é a sigla para Central Process Unit?</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta1">
+                <button class="verificar" onclick="verificar1()">Verificar</button>
+                <div style="display: none;" id="erro1" class="erro">
+                    <span id="msg1" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta2" class="div_pergunta">
+                <span id="pergunta2" class="pergunta">2- Um circuto digital que realiza<br> operações lógicas e
+                    aritméticas.<br> Qual é o nome deste componente?</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta2">
+                <button class="verificar" onclick="verificar2()">Verificar</button>
+                <div style="display: none;" id="erro2" class="erro">
+                    <span id="msg2" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta3" class="div_pergunta">
+                <span id="pergunta3" class="pergunta">3 -Tipo de memória que se encontra <br>no topo da hierarquia de
+                    memória.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta3">
+                <button class="verificar" onclick="verificar3()">Verificar</button>
+                <div style="display: none;" id="erro3" class="erro">
+                    <span id="msg3" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta4" class="div_pergunta">
+                <span id="pergunta4" class="pergunta">4- Tipo de memória volátil que <br>tem como nome Random Acess
+                    Memory. <br>Qual é a sigla deste componente?</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta4">
+                <button class="verificar" onclick="verificar4()">Verificar</button>
+                <div style="display: none;" id="erro4" class="erro">
+                    <span id="msg4" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta5" class="div_pergunta">
+                <span id="pergunta5" class="pergunta">5- Tipo de memória não volátil que oferece dados apenas para
+                    leitura.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta5">
+                <button class="verificar" onclick="verificar5()">Verificar</button>
+                <div style="display: none;" id="erro5" class="erro">
+                    <span id="msg5" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta6" class="div_pergunta">
+                <span id="pergunta6" class="pergunta">6- Tipo de memória não volátil que precisa ter seu chip exposto a
+                    luz ultravioleta para apagar seu conteúdo.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta6">
+                <button class="verificar" onclick="verificar6()">Verificar</button>
+                <div style="display: none;" id="erro6" class="erro">
+                    <span id="msg6" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta7" class="div_pergunta">
+                <span id="pergunta7" class="pergunta">7- Tipo particular de EEPROM que <br>mantém as informações
+                    armazenadas <br>sem a necessidade de uma <br>fonte de energia elétrica.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta7">
+                <button class="verificar" onclick="verificar7()">Verificar</button>
+                <div style="display: none;" id="erro7" class="erro">
+                    <span id="msg7" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta8" class="div_pergunta">
+                <span id="pergunta8" class="pergunta">8- Tipo de memória que precisa ter seu conteúdo copiado na RAM
+                    para poder ser executado pela CPU.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta8">
+                <button class="verificar" onclick="verificar8()">Verificar</button>
+                <div style="display: none;" id="erro8" class="erro">
+                    <span id="msg8" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta9" class="div_pergunta">
+                <span id="pergunta9" class="pergunta">9- Permite que periféricos acessem diretamente a RAM <br>sem
+                    ocupar processamento.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta9">
+                <button class="verificar" onclick="verificar9()">Verificar</button>
+                <div style="display: none;" id="erro9" class="erro">
+                    <span id="msg9" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta10" class="div_pergunta">
+                <span id="pergunta10" class="pergunta">10- Também conhecido como <br>Slave Select (SS).</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta10">
+                <button class="verificar" onclick="verificar10()">Verificar</button>
+                <div style="display: none;" id="erro10" class="erro">
+                    <span id="msg10" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta11" class="div_pergunta">
+                <span id="pergunta11" class="pergunta">11- Grupo de linhas ou trilhas usadas para se referir a um
+                    endereço físico na memória. O número de trilhas determina a quantidade de endereços na memória
+                    física.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta11">
+                <button class="verificar" onclick="verificar11()">Verificar</button>
+                <div style="display: none;" id="erro11" class="erro">
+                    <span id="msg11" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta12" class="div_pergunta">
+                <span id="pergunta12" class="pergunta">12- Também chamado de Memory Bus. É responsável para carregar os
+                    dados.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta12">
+                <button class="verificar" onclick="verificar12()">Verificar</button>
+                <div style="display: none;" id="erro12" class="erro">
+                    <span id="msg12" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta13" class="div_pergunta">
+                <span id="pergunta13" class="pergunta">13- Modelo de processador desenvolvido pela Intel qu teve sua
+                    primeira versão lançada em setembro de 2009.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta13">
+                <button class="verificar" onclick="verificar13()">Verificar</button>
+                <div style="display: none;" id="erro13" class="erro">
+                    <span id="msg13" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta14" class="div_pergunta">
+                <span id="pergunta14" class="pergunta">14- Modelo de processador desenvolvido pela Intel qu teve sua
+                    primeira versão lançada em novembro de 2008.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta14">
+                <button class="verificar" onclick="verificar14()">Verificar</button>
+                <div style="display: none;" id="erro14" class="erro">
+                    <span id="msg14" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta15" class="div_pergunta">
+                <span id="pergunta15" class="pergunta">15- Tipo de processador que possui dois processadores ou melhor
+                    dizendo ‘dois centros, núcleos ou cores de execução‘ no mesmo circuito integrado. Cada core tem sua
+                    própria memória cash e controlador o que permite que funcione mais efetivamente do que um
+                    processador single.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta15">
+                <button class="verificar" onclick="verificar15()">Verificar</button>
+                <div style="display: none;" id="erro15" class="erro">
+                    <span id="msg15" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+            </div>
+            <div style="display: none;" id="div_pergunta16" class="div_pergunta">
+                <span id="pergunta16" class="pergunta">16- Segue o mesmo princípio de um dual-core, mas agora em teoria
+                    tem o dobro da capacidade de processamento.</span>
+                <input placeholder="Sua resposta" type="text" class="resposta" id="inp_resposta16">
+                <button class="verificar" onclick="verificar16()">Verificar</button>
+                <div style="display: none;" id="erro16" class="erro">
+                    <span id="msg16" class="msg">
+                        Por Favor, digite uma resposta na caixa de texto.
+                    </span>
+                </div>
+
+            </div>
+            <div style="display: none;" id="div_pergunta17" class="div_pergunta">
+                <span class="para">Parabéns!!! <br> Você completou a Cruzadinha</span>
+            </div>
+        </div>
+        <div id="card3" style="display: block;" class="card3">
+            <h1>Instruções do Jogo</h1><br><br>
+            <span class="texto1">Clique em "Começar o Jogo" para iniciar uma partida. <br><br>Insira a sua resposta na caixa de texto a direita e clique em "Verificar" para conferir
+                a sua resposta.</span>
+            <div class="btn"><button onclick="comecar()">Começar o Jogo</button></div>
+        </div>
+
+    </div>
+    <footer>
+        <p>Palavras-cruzadas <br>
+            Gabriel Henrique de Camargo Bordin <br>
+            RA: 03221035 <br>
+            SIS
+        </p>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    function comecar() {
+        card3.style.display = `none`
+        card1.style.display = `block`
+        card2.style.display = `block`
+    }
+    function instrucoes() {
+        card3.style.display = `block`
+        card1.style.display = `none`
+        card2.style.display = `none`
+    }
+    function verificar1() {
+        var resposta = inp_resposta1.value
+        if (resposta == ``) {
+            msg1.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro1.style.display = `block`
+        }
+        else if (resposta == `cpu` || resposta == `CPU`) {
+            cell3.innerHTML = `C`
+            cell16.innerHTML = `P`
+            cell29.innerHTML = `U`
+            div_pergunta2.style.display = `block`
+            div_pergunta1.style.display = `none`
+        }
+        else {
+            msg1.innerHTML = `Resposta errada!`
+            erro1.style.display = `block`
+        }
+    }
+    function verificar2() {
+        var resposta = inp_resposta2.value
+        if (resposta == ``) {
+            msg2.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro2.style.display = `block`
+        }
+        else if (resposta == `ula` || resposta == `ULA`) {
+            cell99.innerHTML = `U`
+            cell100.innerHTML = `L`
+            cell101.innerHTML = `A`
+            div_pergunta3.style.display = `block`
+            div_pergunta2.style.display = `none`
+        }
+        else {
+            msg2.innerHTML = `Resposta errada!`
+            erro2.style.display = `block`
+        }
+    }
+    function verificar3() {
+        var resposta = inp_resposta3.value
+        if (resposta == ``) {
+            msg3.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro3.style.display = `block`
+        }
+        else if (resposta == `registradores` || resposta == `Registradores`) {
+            cell45.innerHTML = `R`
+            cell58.innerHTML = `E`
+            cell71.innerHTML = `G`
+            cell84.innerHTML = `I`
+            cell97.innerHTML = `S`
+            cell110.innerHTML = `T`
+            cell123.innerHTML = `R`
+            cell136.innerHTML = `A`
+            cell149.innerHTML = `D`
+            cell162.innerHTML = `O`
+            cell175.innerHTML = `R`
+            cell189.innerHTML = `E`
+            cell202.innerHTML = `S`
+            div_pergunta4.style.display = `block`
+            div_pergunta3.style.display = `none`
+        }
+        else {
+            msg3.innerHTML = `Resposta errada!`
+            erro3.style.display = `block`
+        }
+    }
+    function verificar4() {
+        var resposta = inp_resposta4.value
+        if (resposta == ``) {
+            msg4.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro4.style.display = `block`
+        }
+        else if (resposta == `ram` || resposta == `RAM`) {
+            cell46.innerHTML = `A`
+            cell47.innerHTML = `M`
+            div_pergunta5.style.display = `block`
+            div_pergunta4.style.display = `none`
+        }
+        else {
+            msg4.innerHTML = `Resposta errada!`
+            erro4.style.display = `block`
+        }
+    }
+    function verificar5() {
+        var resposta = inp_resposta5.value
+        if (resposta == ``) {
+            msg5.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro5.style.display = `block`
+        }
+        else if (resposta == `rom` || resposta == `ROM`) {
+            cell199.innerHTML = `R`
+            cell212.innerHTML = `O`
+            cell225.innerHTML = `M`
+            div_pergunta6.style.display = `block`
+            div_pergunta5.style.display = `none`
+        }
+        else {
+            msg5.innerHTML = `Resposta errada!`
+            erro5.style.display = `block`
+        }
+    }
+    function verificar6() {
+        var resposta = inp_resposta6.value
+        if (resposta == ``) {
+            msg6.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro6.style.display = `block`
+        }
+        else if (resposta == `eprom` || resposta == `EPROM` || resposta == `Eprom`) {
+            cell172.innerHTML = `E`
+            cell185.innerHTML = `P`
+            div_pergunta7.style.display = `block`
+            div_pergunta6.style.display = `none`
+        }
+        else {
+            msg6.innerHTML = `Resposta errada!`
+            erro6.style.display = `block`
+        }
+    }
+    function verificar7() {
+        var resposta = inp_resposta7.value
+        if (resposta == ``) {
+            msg7.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro7.style.display = `block`
+        }
+        else if (resposta == `flash` || resposta == `FLASH`) {
+            cell87.innerHTML = `F`
+            cell113.innerHTML = `A`
+            cell126.innerHTML = `S`
+            cell139.innerHTML = `H`
+            div_pergunta8.style.display = `block`
+            div_pergunta7.style.display = `none`
+        }
+        else {
+            msg7.innerHTML = `Resposta errada!`
+            erro7.style.display = `block`
+        }
+    }
+    function verificar8() {
+        var resposta = inp_resposta8.value
+        if (resposta == ``) {
+            msg8.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro8.style.display = `block`
+        }
+        else if (resposta == `memória de massa` || resposta == `Memória de Massa` || resposta == `memoria de massa`) {
+            cell23.innerHTML = `M`
+            cell36.innerHTML = `E`
+            cell49.innerHTML = `M`
+            cell62.innerHTML = `Ó`
+            cell75.innerHTML = `R`
+            cell88.innerHTML = `I`
+            cell114.innerHTML = `-`
+            cell127.innerHTML = `D`
+            cell140.innerHTML = `E`
+            cell153.innerHTML = `-`
+            cell166.innerHTML = `M`
+            cell179.innerHTML = `A`
+            cell193.innerHTML = `S`
+            cell206.innerHTML = `S`
+            cell219.innerHTML = `A`
+            div_pergunta9.style.display = `block`
+            div_pergunta8.style.display = `none`
+        }
+        else {
+            msg8.innerHTML = `Resposta errada!`
+            erro8.style.display = `block`
+        }
+    }
+    function verificar9() {
+        var resposta = inp_resposta9.value
+        if (resposta == ``) {
+            msg9.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro9.style.display = `block`
+        }
+        else if (resposta == `dma` || resposta == `DMA`) {
+            cell150.innerHTML = `M`
+            cell151.innerHTML = `A`
+            div_pergunta10.style.display = `block`
+            div_pergunta9.style.display = `none`
+        }
+        else {
+            msg9.innerHTML = `Resposta errada!`
+            erro9.style.display = `block`
+        }
+    }
+    function verificar10() {
+        var resposta = inp_resposta10.value
+        if (resposta == ``) {
+            msg10.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro10.style.display = `block`
+        }
+        else if (resposta == `cs` || resposta == `CS`) {
+            cell229.innerHTML = `C`
+            cell230.innerHTML = `S`
+            div_pergunta11.style.display = `block`
+            div_pergunta10.style.display = `none`
+        }
+        else {
+            msg10.innerHTML = `Resposta errada!`
+            erro10.style.display = `block`
+        }
+    }
+    function verificar11() {
+        var resposta = inp_resposta11.value
+        if (resposta == ``) {
+            msg11.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro11.style.display = `block`
+        }
+        else if (resposta == `adress bus` || resposta == `Adress Bus`) {
+            cell197.innerHTML = `A`
+            cell198.innerHTML = `D`
+            cell200.innerHTML = `E`
+            cell201.innerHTML = `S`
+            cell202.innerHTML = `S`
+            cell203.innerHTML = `-`
+            cell204.innerHTML = `B`
+            cell205.innerHTML = `U`
+            div_pergunta12.style.display = `block`
+            div_pergunta11.style.display = `none`
+        }
+        else {
+            msg11.innerHTML = `Resposta errada!`
+            erro11.style.display = `block`
+        }
+    }
+    function verificar12() {
+        var resposta = inp_resposta12.value
+        if (resposta == ``) {
+            msg12.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro12.style.display = `block`
+        }
+        else if (resposta == `data bus` || resposta == `Data Bus`) {
+            cell138.innerHTML = `D`
+            cell164.innerHTML = `T`
+            cell177.innerHTML = `A`
+            cell191.innerHTML = `-`
+            cell217.innerHTML = `U`
+            div_pergunta13.style.display = `block`
+            div_pergunta12.style.display = `none`
+        }
+        else {
+            msg12.innerHTML = `Resposta errada!`
+            erro12.style.display = `block`
+        }
+    }
+    function verificar13() {
+        var resposta = inp_resposta13.value
+        if (resposta == ``) {
+            msg13.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro13.style.display = `block`
+        }
+        else if (resposta == `i5` || resposta == `I5`) {
+            cell89.innerHTML = `5`
+            div_pergunta14.style.display = `block`
+            div_pergunta13.style.display = `none`
+        }
+        else {
+            msg13.innerHTML = `Resposta errada!`
+            erro13.style.display = `block`
+        }
+    }
+    function verificar14() {
+        var resposta = inp_resposta14.value
+        if (resposta == ``) {
+            msg14.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro14.style.display = `block`
+        }
+        else if (resposta == `i7` || resposta == `I7`) {
+            cell85.innerHTML = `7`
+            div_pergunta15.style.display = `block`
+            div_pergunta14.style.display = `none`
+        }
+        else {
+            msg14.innerHTML = `Resposta errada!`
+            erro14.style.display = `block`
+        }
+    }
+    function verificar15() {
+        var resposta = inp_resposta15.value
+        if (resposta == ``) {
+            msg15.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro15.style.display = `block`
+        }
+        else if (resposta == `dual core` || resposta == `Dual Core`) {
+            cell28.innerHTML = `D`
+            cell30.innerHTML = `A`
+            cell31.innerHTML = `L`
+            cell32.innerHTML = `-`
+            cell33.innerHTML = `C`
+            cell34.innerHTML = `O`
+            cell35.innerHTML = `R`
+            div_pergunta16.style.display = `block`
+            div_pergunta15.style.display = `none`
+        }
+        else {
+            msg15.innerHTML = `Resposta errada!`
+            erro15.style.display = `block`
+        }
+    }
+    function verificar16() {
+        var resposta = inp_resposta16.value
+        if (resposta == ``) {
+            msg16.innerHTML = `Por Favor, digite uma resposta na caixa de texto.`
+            erro16.style.display = `block`
+        }
+        else if (resposta == `quad core` || resposta == `Quad Core`) {
+            cell4.innerHTML = `Q`
+            cell17.innerHTML = `U`
+            cell43.innerHTML = `D`
+            cell56.innerHTML = `-`
+            cell69.innerHTML = `C`
+            cell82.innerHTML = `O`
+            cell95.innerHTML = `R`
+            cell108.innerHTML = `E`
+            div_pergunta16.style.display = `none`
+            div_pergunta17.style.display = `block`
+
+        }
+        else {
+            msg16.innerHTML = `Resposta errada!`
+            erro16.style.display = `block`
+        }
+    }
+
+</script>
