@@ -1,8 +1,3 @@
-
-
-
-
-
 var questions = [
     {
         question: "O que é o npm start?",
@@ -49,15 +44,15 @@ var questions = [
         },
         answer: "a"
     },
-    {
-        question: "Onde no código é feita a média das leituras de temp?",
-        choices: {
-            a: "",
-            b: "",
-            c: ""
-        },
-        answer: "c"
-    },
+    // {
+    //     question: "Onde no código é feita a média das leituras de temp?",
+    //     choices: {
+    //         a: "",
+    //         b: "",
+    //         c: ""
+    //     },
+    //     answer: "c"
+    // },
     {
         question: "Onde no código é feita a alteração de tamanho, tipo e cor do gráfico?",
         choices: {
@@ -105,24 +100,23 @@ var questions = [
     }
 
 
-
 ];
 
 function quiz(){
-    //Armazena a saída do HTML
+     //Armazena a saída do HTML
     var output = [];
 
-    // Constrói o HTML para cada pergunta
+   // Constrói o HTML para cada pergunta
     questions.forEach((currentQuestion, questionNumber) => {
-        // Armazena a resposta de cada questão
+        // para cada questão
         var choices = [];
 
-        // para cada questão
+         // adiciona o botão
         for(letter in currentQuestion.choices) {
 
             // adiciona o botão
             choices.push(
-                // modelo
+                  // modelo
                 `<label><input type="radio" name="question${questionNumber}" value="${letter}">
                     <span class="customRadio"></span>
                         ${letter} :
@@ -131,13 +125,13 @@ function quiz(){
             );
         }
 
-        // adiciona a pergunta e a resposta no output
+          // adiciona a pergunta e a resposta no output
         output.push(
             `<div class="slide">
                 <div class="question">${currentQuestion.question}</div>
                 <div class="choices">${choices.join("")}</div>
             </div>`
-             // join pega as respostas e coloca em uma string
+              // join pega as respostas e coloca em uma string
         );
     });
     // combina a lista da string e coloca no HTML
@@ -146,7 +140,7 @@ function quiz(){
 
 function results(){
 
-    //reune as respostas (choices)
+   //reune as respostas (choices)
     var answerContainers = quizContainer.querySelectorAll(".choices");
 
     // acompanha as respostas do usuário
@@ -156,7 +150,7 @@ function results(){
     questions.forEach((currentQuestion, questionNumber) => {
         // encontra a resposta escolhida
         var answerContainer = answerContainers[questionNumber];
-        // seleciona qual botão foi escolhido
+          // seleciona qual botão foi escolhido
         var selector = `input[name=question${questionNumber}]:checked`;
         // userAnswer é qual botão foi escolhido
         // {} vazio caso o usuário não tenha selecionado a resposta
@@ -164,37 +158,37 @@ function results(){
 
         // caso a resposta esteja correta
         if(userAnswer === currentQuestion.answer) {
-            // add to number of correct answers
+             // add to number of correct answers
             numCorrect++;
 
             // verde caso esteja correto
             answerContainers[questionNumber].style.color = "rgb(0, 88, 4)";
         } else {   
-            // vermelho caso esteja incorreto
+        // vermelho caso esteja incorreto
             answerContainers[questionNumber].style.color = "rgb(141, 0, 0)";
         }
     });
 
-    // mostra quantas respostas foram corretas do total
+      // mostra quantas respostas foram corretas do total
     resultsContainer.innerHTML = `${numCorrect} out of ${questions.length}`;
 }
 
 function showSlide(n) {
-    // esconde a tela
+     // esconde a tela
     slides[currentSlide].classList.remove("active-slide");
-    // mostra a próxima pergunta
+     // mostra a próxima pergunta
     slides[n].classList.add("active-slide");
-    // atualiza o número da pergunta
+     // atualiza o número da pergunta
     currentSlide = n;
 
-    // Primeira pergunta- esconde o botão de voltar - mostra o botão de próxima pergunta
+ // Primeira pergunta- esconde o botão de voltar - mostra o botão de próxima pergunta
     if(currentSlide === 0) {
         previousButton.style.display = "none";
     } else {
         previousButton.style.display = "inline-block";
     }
 
-    // Última pergunta - esconde o botão de próxima pergunta - mostra o botão de enviar as respostas
+   // Última pergunta - esconde o botão de próxima pergunta - mostra o botão de enviar as respostas
     if(currentSlide === slides.length - 1) {
         nextButton.style.display = "none";
         submitButton.style.display = "inline-block";
@@ -223,7 +217,7 @@ var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("submit");
 
-//display quiz 
+//mostra o quizz
 quiz();
 
 var previousButton = document.getElementById("previous");
@@ -231,7 +225,7 @@ var nextButton = document.getElementById("next");
 var slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 
-// Display Slides
+// mostra os slides
 showSlide(0);
 
 // click envia as respostas e mostra os resultados 
