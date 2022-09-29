@@ -12,106 +12,85 @@ var questions = [
     {
         question: "Por que abrir o Git Bash no local da API?",
         choices: {
-            a: "1975",
-            b: "1972",
-            c: "1969"
+            a: "Para conectar no banco",
+            b: "Para poder rodar a api",
+            c: "Para poder dar npm install"
         },
         answer: "c"
     },
     {
         question: "Onde está a API na sua máquina e por quê?",
         choices: {
-            a: "6",
-            b: "7",
-            c: "8"
+            a: "Localizada no system32",
+            b: "Está localizada no local do git clone",
+            c: "Localizada em Objetos 3D"
         },
         answer: "b"
     },
     {
         question: "Qual a porta, é utilizada pelo index.html?",
         choices: {
-            a: "Pronghorn",
-            b: "Cheeta",
-            c: "Springbokgit"
+            a: "3333",
+            b: "3306",
+            c: "3000"
         },
-        answer: "b"
+        answer: "a"
     },
     {
         question: "Onde no código o gráfico é gerado?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "Na função Plotar gráfico",
+            b: "No diretório models",
+            c: "Na função obter dados gráficos"
         },
         answer: "a"
     },
-
-    // {
-    //     question: "Onde no código é feita a média das leituras de temp?",
-    //     choices: {
-    //         a: "",
-    //         b: "",
-    //         c: ""
-    //     },
-    //     answer: "c"
-    // },
-
-    {
-        question: "Onde no código é feita a média das leituras de temp?",
-        choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
-        },
-        answer: "a"
-    },
-
+    
     {
         question: "Onde no código é feita a alteração de tamanho, tipo e cor do gráfico?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "Dentro do site chartjs.org",
+            b: "Dentro da function plotarGráfico",
+            c: "Dentro da function"
         },
-        answer: "a"
+        answer: "b"
     },
     {
         question: "O que causa erro de inicialização da API?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "Não criar as rotas",
+            b: "Não utilizar git bash",
+            c: "Não baixar os modulos node"
         },
-        answer: "a"
+        answer: "c"
     },
     {
         question: "Qual PID está associado a porta tomada pelo index.html?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "netstat -a -n -o | findstr 3333",
+            b: "netstat -a -n -o | findstr 3306",
+            c: "netstat -a -n -o | findstr 43"
         },
         answer: "a"
     },
     {
         question: "Quais os passos para configurar variável de ambiente do Windows para que você acesse o mysql no terminal direto em qualquer local?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "Configurar o .body no CSS",
+            b: "Alterando as variáveis",
+            c: "Configurar o ambiente em App.JS"
         },
-        answer: "a"
+        answer: "c"
     },
     {
         question: "Qual o comando para acessar o banco via CMD?",
         choices: {
-            a: "California",
-            b: "New York",
-            c: "Texas"
+            a: "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe -u aluno -p",
+            b: "C:\swsetup\SP64284\WinWDF\x64",
+            c: "C:\Arquivos de Programas RFB"
         },
         answer: "a"
     }
-
 
 ];
 
