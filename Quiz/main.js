@@ -162,7 +162,7 @@ function results(){
     });
 
       // mostra quantas respostas foram corretas do total
-    resultsContainer.innerHTML = `${numCorrect} out of ${questions.length}`;
+    resultsContainer.innerHTML = `${numCorrect} de ${questions.length}`;
 }
 
 function showSlide(n) {
