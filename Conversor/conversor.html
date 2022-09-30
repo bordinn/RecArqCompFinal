@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de Bases Numéricas</title>
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <header class="header">
+                <h2>Conversor Arq. Comp</h2>
+            </header>
+        </center>
+        <div class="box-form">
+            <form>
+                <!-- Escolher a base -->
+                <label for="bases">Selecione uma Base: </label>
+                <select id="bases" onchange="limpar(this.value)">
+                    <option value="0" selected>--</option>
+                    <option value="10">Decimal</option>
+                    <option value="2">Binário</option>
+                    <option value="8">Octal</option>
+                    <option value="16">Hexadecimal</option>
+                </select>
+
+                <!-- valor decimal -->
+                <label for="decimal">Decimal:</label>
+                <input type="text" id="decimal" onkeypress="return tipo_decimal(event);" disabled />
+
+
+                <!-- valor binario -->
+                <label for="binario">Binário:</label>
+                <input type="text" id="binario" onkeypress="return tipo_binario(event);" disabled>
+
+
+                <!-- valor octal -->
+                <label for="octal">Octal:</label>
+                <input type="text" id="octal" onkeypress="return tipo_octal(event);" disabled>
+
+
+                <!-- valor hexa -->
+                <label for="hexa">Hexadecimal:</label>
+                <input type="text" id="hexa" onkeypress="return tipo_hexa(event);" disabled>
+
+                <div class="container-btn">
+                    
+                    <button type="button" onclick="calcular();" style="cursor: pointer;">Converter</button>
+
+                    
+                    <input type="reset" value="Limpar" onclick="limpar()"; style="cursor: pointer;" >
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+<script>
+
+    /* Apenas 1 e 0 podem ser registrados */
+    function tipo_binario(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla == 48 || tecla == 49)) return true;
+        else {
+            return false;
+        }
+    }
+
+    /* Apenas decimais podem ser registrados*/
+    function tipo_decimal(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla >= 48 && tecla <= 57)) return true;
+        else {
+            return false;
+        }
+    }
+
+    /* Apenas octais podem ser registrados */
+    function tipo_octal(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla >= 48 && tecla <= 55)) return true;
+        else {
+            return false;
+        }
+    }
+
+    /* Apenas hexadecimais podem ser registrados */
+    function tipo_hexa(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla >= 48 && tecla <= 57 || tecla >= 65 && tecla <= 70 || tecla >= 97 && tecla <= 102)) return true;
+        else {
+            return false;
+        }
+    }
+
+   //Habilita e desabilita as inputs
+
+    function limpar(value) {
+
+        if (value == 10) {
+            decimal.disabled = false;
+        } else if (value != 10) {
+            decimal.disabled = true;
+        }
+
+        if (value == 2) {
+            binario.disabled = false;
+        } else if (value != 2) {
+            binario.disabled = true;
+        }
+
+        if (value == 8) {
+            octal.disabled = false;
+        } else if (value != 8) {
+            octal.disabled = true;
+        }
+
+        if (value == 16) {
+            hexa.disabled = false;
+        } else if (value != 16) {
+            hexa.disabled = true;
+        }
+    };
+
+    //Calculos
+
+    /* Conversão a partir do decimal */
+    function converter_decimal() {
+        var decimal = parseInt(document.getElementById('decimal').value, 10)
+        document.getElementById("binario").value = decimal.toString(2);
+        document.getElementById("octal").value = decimal.toString(8);
+        document.getElementById("hexa").value = decimal.toString(16);
+    }
+
+    /* Conversão a partir do binario */
+    function converter_binario() {
+        var binario = parseInt(document.getElementById('binario').value, 10)
+        document.getElementById("decimal").value = parseInt(binario, 2);
+        document.getElementById("octal").value = parseInt(binario, 2).toString(8);
+        document.getElementById("hexa").value = parseInt(binario, 2).toString(16);
+    }
+
+    /* Conversão a partir do octal */
+    function converter_octal() {
+        var octal = parseInt(document.getElementById('octal').value, 10)
+        document.getElementById("decimal").value = parseInt(octal, 8);
+        document.getElementById("binario").value = parseInt(octal, 8).toString(2);
+        document.getElementById("hexa").value = parseInt(octal, 8).toString(16);
+    }
+
+    /* Conversão a partir do hexa */
+    function converter_hexa() {
+        var hexadecimal = document.getElementById("hexa").value
+        document.getElementById("decimal").value = parseInt(hexadecimal, 16);
+        document.getElementById("binario").value = parseInt(hexadecimal, 16).toString(2);
+        document.getElementById("octal").value = parseInt(hexadecimal, 16).toString(8);
+    }
+
+    //Chama o calculo de acordo com a opção escolhida
+
+    function calcular() {
+
+        
+        if (bases.value == 10) {
+            converter_decimal();
+        }
+
+        
+        if (bases.value == 2) {
+            converter_binario();
+        }
+
+      
+        if (bases.value == 8) {
+            converter_octal();
+        }
+
+
+        if (bases.value == 16) {
+            converter_hexa();
+        }
+    };
+</script>
